@@ -3,7 +3,7 @@ A small web app that acts as a webhook for your github repo holding your environ
 
 ## Running
 
-````
+```
 virtualenv -p /usr/bin/python2.7 venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -12,10 +12,11 @@ export CONSUL_HOST=your_consul_host
 export CONSUL_PORT=your_consul_port #defaults to 80
 export CONSUL_TOKEN=your_consul_token #defaults to empty
 export CONSUL_DC=your_consul_datacentre #defaults to empty
-
-export
+#run server
 python server.py
+
 ```
+
 
 Then you can go ahead an setup your github webhook following this [link](https://developer.github.com/webhooks/creating/)
 
