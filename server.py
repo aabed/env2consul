@@ -28,7 +28,7 @@ def hook_handler():
 
 
     for change in changes:
-        util.file2consul(home+'/.env2consul/'+repo_name+'/'+change)
+        util.file2consul(home+'/.env2consul/'+repo_name+'/'+change,change)
     return "OK"
 
 
