@@ -17,7 +17,6 @@ RUN pip install -r requirements.txt && \
 USER user
 
 RUN mkdir $HOME/.env2consul && \
-    mkdir $HOME/.env2consul/devops-env2consul && \
     mkdir $HOME/.ssh && \
     ssh-keyscan -t rsa github.com >> $HOME/.ssh/known_hosts
 
