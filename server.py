@@ -22,6 +22,10 @@ def hook_handler():
     repo_name=data["repository"]["name"]
     ssh_url=data["repository"]["ssh_url"]
     commit=data["commits"][0]["id"]
+
+    if not os.path.exists(home+'/.env2consul/'+repo_name):
+        os.makedirs(home+'/.env2consul/'+repo_name)
+
     repo_dir=home+'/.env2consul/'+repo_name
     print changes
     util.get_changes(ssh_url,commit,repo_dir)
