@@ -22,9 +22,9 @@ Then you can go ahead an setup your github webhook following this [link](https:/
 
 ## Running env2consul inside a Docker container 
 
-The given Dockerfile builds an env2consul image in an Alpine 3.7 container. Run your env2consul container with the following command: 
+The given Dockerfile builds an env2consul image in an Alpine 3.7 container. Start your env2consul container (named env2consul) with the following command: 
 
-```docker run -u user -e "CONSUL_HOST=localhost" -e "CONSUL_PORT=8500" -p "5000:5000" --net="host" -itd env2consul```
+```docker run --name env2consul -u user -e "CONSUL_HOST=localhost" -e "CONSUL_PORT=8500" -p "5000:5000" --net="host" -itd env2consul```
 
 It is required to mount your deploy key into the container in order for the git fetch/clone to work. 
 
