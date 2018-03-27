@@ -1,7 +1,7 @@
 # env2consul
 A small web app that acts as a webhook for your github repo holding your environmental file2consul
 
-## Running
+## Running env2consul on the host 
 
 ```
 virtualenv -p /usr/bin/python2.7 venv
@@ -17,8 +17,17 @@ python server.py
 
 ```
 
-
 Then you can go ahead an setup your github webhook following this [link](https://developer.github.com/webhooks/creating/)
+
+## Running env2consul inside a Docker container 
+
+The given Dockerfile builds an env2consul image in an Alpine 3.7 container. Run your env2consul container with the following command: 
+
+```docker run -u user -e "CONSUL_HOST=localhost" -e "CONSUL_PORT=8500" -p "5000:5000" --net="host" -itd env2consul```
+
+It is required to mount your deploy key into the container in order for the git fetch/clone to work. 
+Note that we assume there is a Consul agent running in the same instance so env2consul can contact Consul locally. 
+
 
 ## Description
 If you are using [Twelve-Factor](https://12factor.net/) approach to deliver software, you must be using environmental variables to configure your apps
